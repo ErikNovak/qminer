@@ -33,6 +33,7 @@ script:
   - if [[ $PUBLISH_BINARY == true ]] && [ "$TRAVIS_REPO_SLUG" = "qminer/qminer" ] && [[ $TRAVIS_PULL_REQUEST == false ]]; then echo publishing && ./node_modules/.bin/node-pre-gyp package unpublish publish; fi
   - npm install -g mocha@6.2.3
   - npm install -g mustache
+  - echo "module.exports = require('../index');" > ./node_modules/qminer.js
   - ./tools/mac_genExampleTests.sh
   - ./test/nodejs/mac_test.sh
 
