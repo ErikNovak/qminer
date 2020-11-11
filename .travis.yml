@@ -9,6 +9,7 @@ node_js:
   - "13"
   - "14"
 
+os: osx
 osx_image: xcode10.1
 
 env:
