@@ -5,15 +5,6 @@ git:
 
 language: node_js
 
-node_js:
-  - "8"
-  - "9"
-  - "10"
-  - "11"
-  - "12"
-  - "13"
-  - "14"
-
 addons:
   apt:
     sources:
@@ -35,14 +26,40 @@ jobs:
   include:
     - os: linux
       dist: trusty
+      env: CXXFLAGS=-std=c++0x CC=gcc-7 CXX=g++-7
+      node_js:
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
+        - "13"
+        - "14"
 
     - os: osx
       osx_image: xcode10.1
       env: NPMOPT=--clang=1
+      node_js:
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
+        - "13"
+        - "14"
 
     - os: osx
       osx_image: xcode10.1
       env: NPMOPT=--clang=1 QMDEBUG=--debug
+      node_js:
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
+        - "13"
+        - "14"
+
 
 before_install:
   # get commit message
